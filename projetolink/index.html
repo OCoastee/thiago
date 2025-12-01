@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thiago do Nascimento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body{
+      font-family: Inter, -apple-system, system-ui, sans-serif;
+      background: #000;
+      min-height:100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* =======================
+       GRAINS / GRADIENT
+    ======================== */
+    .blob{
+      position:absolute;
+      filter:blur(95px);
+      opacity:0.35;
+      border-radius:50%;
+      mix-blend-mode:screen;
+      animation:float 12s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+    @keyframes float{
+      0%{ transform: translateY(0px) scale(1); }
+      100%{ transform: translateY(-70px) scale(1.15); }
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(22px) saturate(190%);
+    }
+
+    .link-card{
+      transition: all .35s cubic-bezier(.2,.8,.2,1);
+    }
+    .link-card:hover{
+      transform: translateY(-4px) scale(1.015);
+      background: rgba(255,255,255,0.075);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    /* =======================
+       CENTRALIZAÇÃO TOTAL
+    ======================== */
+    main{
+      width:100%;
+      min-height:100vh;         /* <--- garante sempre tela cheia */
+      display:flex;
+      justify-content:center;   /* centro horizontal */
+      align-items:center;       /* centro vertical */
+      padding: 2rem 1rem;
+      position:relative;
+      z-index:10;
+    }
+
+    section{
+      width:100%;
+      max-width:560px;
+    }
+
+    @keyframes slow-pulse {
+      0% { opacity: .45; transform: scale(1); }
+      50% { opacity: .9; transform: scale(1.03); }
+      100% { opacity: .45; transform: scale(1); }
+    }
+    .animate-slow-pulse{ animation: slow-pulse 6s ease-in-out infinite; }
+  </style>
+</head>
+<body>
+
+<!-- FUNDO PRETO + CINZA + GRAIN -->
+<div class="fixed inset-0 pointer-events-none z-0">
+  
+  <!-- Fundo cinza escuro suave -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-black"></div>
+
+  <!-- Vinhetas escuras nas bordas -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/60"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60"></div>
+  <div class="absolute inset-0 bg-gradient-to-l from-black/40"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/40"></div>
+
+  <!-- Grain -->
+  <div class="absolute inset-0 opacity-[0.18] mix-blend-soft-light"
+       style="background-image:url('https://uploads-ssl.webflow.com/5f4e39c97c871c8f9a3f9185/5f4e3b06a5e672fea53d38ad_noise.png'); background-size:250px;">
+  </div>
+</div>
+
+
+
+  <main>
+    <section>
+
+      <!-- CARTÃO PRINCIPAL -->
+      <div class="glass rounded-3xl p-6 sm:p-8 shadow-xl shadow-black/40 mb-8 text-center">
+
+        <!-- FOTO -->
+        <div class="relative w-full h-48 sm:h-60 md:h-72 mb-10 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-pink-500/40 backdrop-blur-2xl"></div>
+          <div class="absolute -inset-24 bg-gradient-to-tr from-white/15 to-white/5 rounded-3xl blur-3xl animate-slow-pulse"></div>
+
+          <img src="foto/WhatsApp Image 2025-12-01 at 1.34.49 PM.jpeg"
+            class="relative z-10 w-full h-full object-cover object-[0_11%]" 
+ />
+        </div>
+
+        <!-- NOME DO ARTISTA -->
+        <h1 class="text-2xl font-semibold text-slate-100">Thiago do Nascimento</h1>
+        <p class="text-slate-300 mt-1 text-sm">Cantor • Músico • Novo Single em Breve</p>
+
+        <!-- REDES -->
+        <div class="flex justify-center gap-5 mt-5">
+          <a class="glass p-2.5 rounded-xl" href="https://www.instagram.com/thinasci/">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="w-5 invert opacity-80" />
+          </a>
+
+          <a class="glass p-2.5 rounded-xl" href="https://www.youtube.com/@ThiagoDoNascimento">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" class="w-6 invert opacity-80" />
+          </a>
+
+          <a class="glass p-2.5 rounded-xl" href="https://open.spotify.com/intl-pt/artist/3ybYErBvi0UOz15j7yyYE8?si=744crfI_SvyeArPqowPcwg">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" class="w-5 invert opacity-80" />
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- LINKS PRINCIPAIS -->
+      <div class="space-y-4">
+
+        <!-- SINGLE / MÚSICA NOVA -->
+        <a href="https://onerpm.link/239211498102" class="glass link-card rounded-2xl p-5 flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-100 text-base">🎧 Ouça o Novo Single "Um Dia"</h3>
+            <p class="text-sm text-slate-300">Disponível em todas as plataformas</p>
+          </div>
+        </a>
+
+        <!-- CANAL -->
+        <a href="https://www.youtube.com/@ThiagoDoNascimento" class="glass link-card rounded-2xl p-5 flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" class="w-6 opacity-80 invert" />
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-100 text-base">YouTube Oficial</h3>
+            <p class="text-sm text-slate-300">Clipes, covers e lançamentos</p>
+          </div>
+        </a>
+
+        <!-- SPOTIFY -->
+        <a href="https://open.spotify.com/intl-pt/artist/3ybYErBvi0UOz15j7yyYE8?si=744crfI_SvyeArPqowPcwg" class="glass link-card rounded-2xl p-5 flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" class="w-6 opacity-80 invert" />
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-100 text-base">Spotify</h3>
+            <p class="text-sm text-slate-300">Ouça minhas músicas</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- GRAIN -->
+  <div class="pointer-events-none fixed inset-0 opacity-20 mix-blend-soft-light"
+       style="background-image:url('https://uploads-ssl.webflow.com/5f4e39c97c871c8f9a3f9185/5f4e3b06a5e672fea53d38ad_noise.png'); background-size:280px;">
+  </div>
+
+</body>
+</html>
